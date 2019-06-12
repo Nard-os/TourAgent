@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation_graph">
 
+    <fragment android:id="@+id/destination_home" android:name="et.edu.aait.itsc.nardos.android.my_tour_guide.MainActivity"
+              android:label="fragment_home" tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_destination_home_to_login_fragment" app:destination="@id/login_fragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/login_fragment" android:name="et.edu.aait.itsc.nardos.android.my_tour_guide.MainActivity"
+              android:label="fragment_home" tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_login_fragment_to_review" app:destination="@id/review"/>
+    </fragment>
+
+    <fragment android:id="@+id/country_edit" android:name="et.edu.aait.itsc.nardos.android.my_tour_guide.MainActivity"
+              android:label="fragment_home" tools:layout="@layout/fragment_country"/>
+
+    <fragment android:id="@+id/review" android:name="et.edu.aait.itsc.nardos.android.my_tour_guide.MainActivity"
+              android:label="fragment_home" tools:layout="@layout/fragment_review">
+        <action android:id="@+id/action_review_to_country_edit" app:destination="@id/country_edit"/>
+    </fragment>
 </navigation>
